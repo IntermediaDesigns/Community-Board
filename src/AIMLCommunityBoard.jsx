@@ -1,46 +1,75 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import PropTypes from 'prop-types';
 import { Calendar, Clock, MapPin, Link, Search } from "lucide-react";
 import { events } from "./eventData";
-import PropTypes from 'prop-types';
 
 const AIMLCommunityBoard = ({ title }) => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [selectedTag, setSelectedTag] = useState("");
+  const [selectedTags, setSelectedTags] = useState([]);
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
 
-  const filteredEvents = events.filter(
-    (event) =>
-      event.title.toLowerCase().includes(searchTerm.toLowerCase()) &&
-      (selectedTag === "" || event.tags.includes(selectedTag))
-  );
+  const filteredEvents = events.filter((event) => {
+    const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesTags = selectedTags.length === 0 || selectedTags.some(tag => event.tags.includes(tag));
+    const eventDate = new Date(event.date);
+    const matchesDateRange = (!startDate || eventDate >= new Date(startDate)) &&
+                             (!endDate || eventDate <= new Date(endDate));
+    return matchesSearch && matchesTags && matchesDateRange;
+  });
 
   const allTags = [...new Set(events.flatMap((event) => event.tags))];
 
+  const handleTagChange = (tag) => {
+    setSelectedTags(prev => 
+      prev.includes(tag) ? prev.filter(t => t !== tag) : [...prev, tag]
+    );
+  };
+
   return (
     <div className="p-4 min-h-screen">
-      <h1>{title}</h1>
-
+      <h1 className="text-3xl font-bold mb-6 text-center">{title}</h1>
+      
       <div className="mb-4 flex flex-col md:flex-row justify-between items-center">
         <div className="relative w-full md:w-64 mb-2 md:mb-0">
           <input
             type="text"
             placeholder="Search events..."
-            className="w-full pl-10 pr-4 py-2 border rounded-lg"
+            className="w-full pl-10 pr-4 py-2 rounded-lg"
+            style={{ border: '1px solid #C470D4' }}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <Search className="absolute left-3 top-2.5 w-5 h-5 text-gray-400" />
         </div>
-        <select
-          className="w-full md:w-auto px-4 py-2 border rounded-lg"
-          onChange={(e) => setSelectedTag(e.target.value)}
-          value={selectedTag}
-        >
-          <option value="">All Tags</option>
-          {allTags.map((tag) => (
-            <option key={tag} value={tag}>
-              {tag}
-            </option>
-          ))}
-        </select>
+        <h2 className="text-purple-300 mb-2 ml-auto mr-2 lg:flex">Search by Date</h2>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          <input
+            type="date"
+            className="px-4 py-2 border rounded-lg"
+            onChange={(e) => setStartDate(e.target.value)}
+          />
+          <input
+            type="date"
+            className="px-4 py-2 border rounded-lg"
+            onChange={(e) => setEndDate(e.target.value)}
+          />
+        </div>
+      </div>
+
+      <div className="mb-4 flex flex-wrap gap-2">
+        {allTags.map(tag => (
+          <button
+            key={tag}
+            onClick={() => handleTagChange(tag)}
+            className={`px-3 py-1 rounded-full text-sm ${
+              selectedTags.includes(tag) 
+                ? 'bg-purple-600 text-white' 
+                : 'bg-gray-200 text-gray-800'
+            }`}
+          >
+            {tag}
+          </button>
+        ))}
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -49,10 +78,7 @@ const AIMLCommunityBoard = ({ title }) => {
             key={index}
             className="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden"
           >
-            <div
-              style={{ backgroundColor: "#7D038D" }}
-              className="text-white py-4 px-6"
-            >
+            <div style={{backgroundColor: '#7D038D'}} className="text-white py-4 px-6">
               <h2 className="text-xl font-semibold">{event.title}</h2>
             </div>
             <div className="p-6">
@@ -84,14 +110,12 @@ const AIMLCommunityBoard = ({ title }) => {
                 href={event.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ backgroundColor: "#7D038D" }}
                 className="w-full inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white"
-                onMouseEnter={(e) =>
-                  (e.target.style.backgroundColor = "#d34ee5")
-                }
-                onMouseLeave={(e) =>
-                  (e.target.style.backgroundColor = "#7D038D")
-                }
+                style={{
+                  backgroundColor: '#7D038D',
+                }}
+                onMouseEnter={(e) => e.target.style.backgroundColor = '#d34ee5'}
+                onMouseLeave={(e) => e.target.style.backgroundColor = '#7D038D'}
               >
                 <Link className="w-5 h-5 mr-2" />
                 More Info
@@ -105,7 +129,7 @@ const AIMLCommunityBoard = ({ title }) => {
 };
 
 AIMLCommunityBoard.propTypes = {
-    title: PropTypes.string.isRequired,
-  };
+  title: PropTypes.string.isRequired,
+};
 
 export default AIMLCommunityBoard;
