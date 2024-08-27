@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import PropTypes from "prop-types";
 import { Calendar, Clock, MapPin, Link, Search } from "lucide-react";
 import { events } from "./eventData";
