@@ -4,7 +4,7 @@ Submitted by: **Lynjai Jimenez**
 
 This web app: **A "Tech Meetup and Workshop Board" for aspiring and professional software engineers in your community. This board would serve as a central hub for local tech events, workshops, and learning resources.**
 
-Time spent: **X** hours spent in total
+Time spent: **2** hours spent in total
 
 ## Required Features
 
@@ -15,12 +15,28 @@ The following **required** functionality is completed:
 
 The following **optional** features are implemented:
 
-- [ ] Buttons or links to a related resources are on each card component
+- [ x ] Buttons or links to a related resources are on each card component
 - [ x ] The site is responsive for both desktop and mobile formats
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+* [ x ] List anything else that you added to improve the site's functionality!
+
+- Date Filtering:
+    Added two date input fields for start and end dates.
+    Updated the filtering logic to consider the date range.
+
+- Multiple Tag Selection:
+    Changed the tag selection from a dropdown to clickable buttons.
+    Users can now select multiple tags.
+    Updated the filtering logic to show events that match any of the selected tags.
+
+- Improved Filtering Logic:
+    The filteredEvents function now combines search, tag, and date filtering.
+
+Users can find events within a specific date range.
+The multiple tag selection allows for more flexible filtering.
+The UI is more interactive with clickable tag buttons.
 
 ## Video Walkthrough
 
@@ -41,7 +57,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright 2024 Lynjai Jimenez
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
