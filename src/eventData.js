@@ -4,7 +4,7 @@ export const events = [
     date: "2024-09-17",
     time: "18:00 - 20:00",
     location: "AI Lab Downtown",
-    link: "https://www.coursera.org/learn/neural-networks-deep-learning",
+    link: "https://pyimagesearch.com/2021/05/06/introduction-to-neural-networks/",
     tags: ["Beginner", "Neural Networks"],
   },
   {
@@ -12,7 +12,7 @@ export const events = [
     date: "2024-09-24",
     time: "19:00 - 21:00",
     location: "Tech University, Room 3B",
-    link: "https://www.edx.org/course/natural-language-processing-nlp",
+    link: "https://www.nlpsummit.org/nlp-summit-2024/",
     tags: ["Intermediate", "NLP"],
   },
   {
@@ -20,7 +20,7 @@ export const events = [
     date: "2024-10-01",
     time: "17:30 - 19:30",
     location: "Innovate Coworking Space",
-    link: "https://www.womeninai.co/events",
+    link: "https://www.womeninai.co/global-network",
     tags: ["Networking", "Diversity"],
   },
   {
