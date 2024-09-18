@@ -55,7 +55,7 @@ const AIMLCommunityBoard = ({ title }) => {
           <h2 className="text-purple-300 mb-2 lg:mb-0 lg:mr-4">
             Search by Date
           </h2>
-          <div className="flex flex-wrap items-center justify-center gap-2">
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-2">
             <input
               type="date"
               className="px-4 py-2 border rounded-lg"
