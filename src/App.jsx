@@ -1,4 +1,4 @@
-import AIMLCommunityBoard from './AIMLCommunityBoard';
+import AIMLCommunityBoard from './components/AIMLCommunityBoard';
 
 function App() {
   return (

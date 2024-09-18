@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
-import { Calendar, Clock, MapPin, Link, Search } from "lucide-react";
-import { events } from "./eventData";
+import { Calendar, Clock, MapPin, Link, Search, X } from "lucide-react";
+import { events } from "../eventData";
 
 const AIMLCommunityBoard = ({ title }) => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -31,6 +31,11 @@ const AIMLCommunityBoard = ({ title }) => {
     );
   };
 
+  const clearDates = () => {
+    setStartDate("");
+    setEndDate("");
+  };
+
   return (
     <div className="p-4 min-h-screen">
       <h1 className="text-5xl font-bold mb-8 text-center">{title}</h1>
@@ -47,19 +52,30 @@ const AIMLCommunityBoard = ({ title }) => {
           <Search className="absolute left-3 top-2.5 w-5 h-5 text-gray-400" />
         </div>
         <div className="flex flex-col lg:flex-row items-center">
-        <h2 className="text-purple-300 mb-2 lg:mb-0 lg:mr-4">Search by Date</h2>
-        <div className="flex flex-wrap items-center justify-center gap-2">
-          <input
-            type="date"
-            className="px-4 py-2 border rounded-lg"
-            onChange={(e) => setStartDate(e.target.value)}
-          />
-          <input
-            type="date"
-            className="px-4 py-2 border rounded-lg"
-            onChange={(e) => setEndDate(e.target.value)}
-          />
-        </div>
+          <h2 className="text-purple-300 mb-2 lg:mb-0 lg:mr-4">
+            Search by Date
+          </h2>
+          <div className="flex flex-wrap items-center justify-center gap-2">
+            <input
+              type="date"
+              className="px-4 py-2 border rounded-lg"
+              value={startDate}
+              onChange={(e) => setStartDate(e.target.value)}
+            />
+            <input
+              type="date"
+              className="px-4 py-2 border rounded-lg"
+              value={endDate}
+              onChange={(e) => setEndDate(e.target.value)}
+            />
+            <button
+              onClick={clearDates}
+              className="px-4 py-2 bg-purple-700 text-gray-200 rounded-lg hover:bg-purple-400 transition-colors duration-200 flex items-center"
+            >
+              <X className="w-4 h-4 mr-1" />
+              Clear Dates
+            </button>
+          </div>
         </div>
       </div>
       <h2 className="text-purple-300 mb-2 text-center">Filter by Category</h2>
@@ -68,10 +84,10 @@ const AIMLCommunityBoard = ({ title }) => {
           <button
             key={tag}
             onClick={() => handleTagChange(tag)}
-            className={`px-3 py-1 rounded-full text-sm ${
+            className={`px-3 py-1 rounded-full text-sm transition-colors duration-200 ${
               selectedTags.includes(tag)
-                ? "bg-purple-600 text-white"
-                : "bg-gray-200 text-gray-800"
+                ? "bg-purple-600 text-white hover:bg-purple-700"
+                : "bg-gray-200 text-gray-800 hover:bg-purple-300"
             }`}
           >
             {tag}

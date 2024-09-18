@@ -1,7 +1,7 @@
 export const events = [
   {
     title: "Intro to Neural Networks Workshop",
-    date: "2024-09-15",
+    date: "2024-09-17",
     time: "18:00 - 20:00",
     location: "AI Lab Downtown",
     link: "https://www.coursera.org/learn/neural-networks-deep-learning",
@@ -9,7 +9,7 @@ export const events = [
   },
   {
     title: "Machine Learning for Natural Language Processing",
-    date: "2024-09-20",
+    date: "2024-09-24",
     time: "19:00 - 21:00",
     location: "Tech University, Room 3B",
     link: "https://www.edx.org/course/natural-language-processing-nlp",
@@ -17,7 +17,7 @@ export const events = [
   },
   {
     title: "Women in AI Networking Event",
-    date: "2024-09-25",
+    date: "2024-10-01",
     time: "17:30 - 19:30",
     location: "Innovate Coworking Space",
     link: "https://www.womeninai.co/events",
@@ -25,7 +25,7 @@ export const events = [
   },
   {
     title: "Deep Learning with PyTorch",
-    date: "2024-10-05",
+    date: "2024-10-08",
     time: "10:00 - 16:00",
     location: "Online Webinar",
     link: "https://pytorch.org/tutorials/",
@@ -33,7 +33,7 @@ export const events = [
   },
   {
     title: "AI Ethics Panel Discussion",
-    date: "2024-10-10",
+    date: "2024-10-15",
     time: "18:30 - 20:30",
     location: "City Library Auditorium",
     link: "https://www.unesco.org/en/artificial-intelligence/recommendation-ethics",
@@ -41,7 +41,7 @@ export const events = [
   },
   {
     title: "Reinforcement Learning Hackathon",
-    date: "2024-10-15",
+    date: "2024-10-22",
     time: "09:00 - 18:00",
     location: "Startup Incubator",
     link: "https://spinningup.openai.com/en/latest/",
@@ -49,7 +49,7 @@ export const events = [
   },
   {
     title: "AI in Healthcare Symposium",
-    date: "2024-10-20",
+    date: "2024-10-29",
     time: "13:00 - 17:00",
     location: "Medical Research Center",
     link: "https://www.who.int/health-topics/artificial-intelligence",
@@ -57,7 +57,7 @@ export const events = [
   },
   {
     title: "Computer Vision Workshop",
-    date: "2024-10-25",
+    date: "2024-11-05",
     time: "18:00 - 21:00",
     location: "Tech Hub East",
     link: "https://www.opencv.org/courses/",
@@ -65,7 +65,7 @@ export const events = [
   },
   {
     title: "AI Startup Pitch Night",
-    date: "2024-11-01",
+    date: "2024-11-12",
     time: "19:00 - 22:00",
     location: "Venture Capital Office",
     link: "https://www.ycombinator.com/library/6g-ai-startup-landscape",
@@ -73,7 +73,7 @@ export const events = [
   },
   {
     title: "Generative AI Art Exhibition",
-    date: "2024-11-05",
+    date: "2024-11-19",
     time: "11:00 - 20:00",
     location: "Modern Art Gallery",
     link: "https://aiartists.org/ai-generated-art-tools",
@@ -81,7 +81,7 @@ export const events = [
   },
   {
     title: "Introduction to TensorFlow",
-    date: "2024-11-10",
+    date: "2024-11-26",
     time: "14:00 - 17:00",
     location: "Community College, Room 105",
     link: "https://www.tensorflow.org/learn",
@@ -89,7 +89,7 @@ export const events = [
   },
   {
     title: "AI in Finance: Trend Prediction",
-    date: "2024-11-15",
+    date: "2024-12-03",
     time: "09:00 - 12:00",
     location: "Financial District Conference Center",
     link: "https://www.investopedia.com/terms/a/artificial-intelligence-ai",
@@ -97,7 +97,7 @@ export const events = [
   },
   {
     title: "Natural Language Processing Masterclass",
-    date: "2024-11-20",
+    date: "2024-12-10",
     time: "10:00 - 16:00",
     location: "Language Institute",
     link: "https://web.stanford.edu/class/cs224n/",
@@ -105,7 +105,7 @@ export const events = [
   },
   {
     title: "AI for Game Development Workshop",
-    date: "2024-11-25",
+    date: "2024-12-17",
     time: "13:00 - 18:00",
     location: "Game Dev Studio",
     link: "https://unity.com/products/machine-learning-agents",
@@ -113,7 +113,7 @@ export const events = [
   },
   {
     title: "Machine Learning Ops (MLOps) Conference",
-    date: "2024-12-01",
+    date: "2024-12-24",
     time: "09:00 - 17:00",
     location: "Convention Center",
     link: "https://ml-ops.org/",
@@ -121,7 +121,7 @@ export const events = [
   },
   {
     title: "AI in Robotics Demonstration",
-    date: "2024-12-05",
+    date: "2024-12-31",
     time: "15:00 - 18:00",
     location: "Robotics Research Lab",
     link: "https://www.edx.org/course/artificial-intelligence-for-robotics",
@@ -129,7 +129,7 @@ export const events = [
   },
   {
     title: "Data Science for Beginners Workshop",
-    date: "2024-12-10",
+    date: "2025-01-07",
     time: "18:00 - 20:00",
     location: "Public Library, Computer Lab",
     link: "https://www.datacamp.com/courses/introduction-to-data-science-in-python",
@@ -137,7 +137,7 @@ export const events = [
   },
   {
     title: "AI in Climate Change Research Seminar",
-    date: "2024-12-15",
+    date: "2025-01-14",
     time: "14:00 - 16:00",
     location: "Environmental Studies Building",
     link: "https://www.climatechange.ai/",
@@ -145,7 +145,7 @@ export const events = [
   },
   {
     title: "Explainable AI Workshop",
-    date: "2024-12-20",
+    date: "2025-01-21",
     time: "10:00 - 13:00",
     location: "Tech Incubator",
     link: "https://christophm.github.io/interpretable-ml-book/",
@@ -153,7 +153,7 @@ export const events = [
   },
   {
     title: "AI and IoT Integration Symposium",
-    date: "2024-12-25",
+    date: "2025-01-28",
     time: "09:00 - 18:00",
     location: "Smart City Exhibition Hall",
     link: "https://www.iotforall.com/iot-and-ai",
