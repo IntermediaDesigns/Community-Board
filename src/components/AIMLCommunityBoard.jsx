@@ -70,7 +70,7 @@ const AIMLCommunityBoard = ({ title }) => {
             />
             <button
               onClick={clearDates}
-              className="px-4 py-2 bg-purple-700 text-gray-200 rounded-lg hover:bg-purple-400 transition-colors duration-200 flex items-center"
+              className="px-4 py-2 bg-[#7D038D] text-gray-200 rounded-lg hover:bg-[#d34ee5] transition-colors duration-200 flex items-center"
             >
               <X className="w-4 h-4 mr-1" />
               Clear Dates
@@ -79,15 +79,15 @@ const AIMLCommunityBoard = ({ title }) => {
         </div>
       </div>
       <h2 className="text-purple-300 mb-2 text-center">Filter by Category</h2>
-      <div className="mb-4 mt-4 flex flex-wrap items-center justify-center gap-2">
+      <div className="mb-8 mt-4 flex flex-wrap items-center justify-center gap-2">
         {allTags.map((tag) => (
           <button
             key={tag}
             onClick={() => handleTagChange(tag)}
-            className={`px-3 py-1 rounded-full text-sm transition-colors duration-200 ${
+            className={`px-3 py-2 rounded-full text-sm transition-colors duration-200 ${
               selectedTags.includes(tag)
-                ? "bg-purple-600 text-white hover:bg-purple-700"
-                : "bg-gray-200 text-gray-800 hover:bg-purple-300"
+                ? "bg-[#7D038D] text-white hover:bg-[#d34ee5]"
+                : "bg-gray-200 text-gray-800 hover:bg-[#d34ee5]"
             }`}
           >
             {tag}
